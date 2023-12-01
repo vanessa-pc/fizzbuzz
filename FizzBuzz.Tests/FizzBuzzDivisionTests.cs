@@ -33,4 +33,9 @@ public class FizzBuzzDivisionTests
     [InlineData(3), InlineData(6), InlineData(9), InlineData(12)]
     public void WhenDivisibleByThreeThenReturnsFizz(int number) => Service
         .GetDivision(number).Should().Be("Fizz");
+    
+    [Theory]
+    [InlineData(5), InlineData(10), InlineData(20), InlineData(25)]
+    public void WhenDivisibleByFiveThenReturnsFizz(int number) => Service
+        .GetDivision(number).Should().Be("Buzz");
 }
