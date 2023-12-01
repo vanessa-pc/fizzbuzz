@@ -4,6 +4,9 @@ public class FizzBuzz : IFizzBuzz
 {
     public string GetDivision(int number)
     {
-        throw new NotImplementedException();
+        return number switch
+        {
+            _ => number.ToString()
+        };
     }
 }
