@@ -6,6 +6,7 @@ public class FizzBuzz : IFizzBuzz
     {
         return number switch
         {
+            _ when number % 3 == 0 => "Fizz",
             _ => number.ToString()
         };
     }
