@@ -36,6 +36,11 @@ public class FizzBuzzDivisionTests
     
     [Theory]
     [InlineData(5), InlineData(10), InlineData(20), InlineData(25)]
-    public void WhenDivisibleByFiveThenReturnsFizz(int number) => Service
+    public void WhenDivisibleByFiveThenReturnsBuzz(int number) => Service
         .GetDivision(number).Should().Be("Buzz");
+    
+    [Theory]
+    [InlineData(15), InlineData(30), InlineData(45), InlineData(60)]
+    public void WhenDivisibleByThreeAndFiveThenReturnsFizzBuzz(int number) => Service
+        .GetDivision(number).Should().Be("FizzBuzz");
 }
