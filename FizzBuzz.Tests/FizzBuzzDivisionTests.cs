@@ -1,5 +1,6 @@
 using System.Reflection;
 using FizzBuzz.Divisions;
+using FluentAssertions;
 
 namespace FizzBuzz.Tests;
 
@@ -13,9 +14,7 @@ public class FizzBuzzDivisionTests
             .SelectMany(x => x.GetTypes())
             .SingleOrDefault(x => x.GetInterfaces().Any(i => typeof(IFizzBuzz) == i));
 
-
     [Fact]
-    public void Test1()
-    {
-    }
+    public void WhenAssemblyScannedThenFindsImplementation() => FizzBuzzImplementationType
+        .Should().NotBeNull();
 }
