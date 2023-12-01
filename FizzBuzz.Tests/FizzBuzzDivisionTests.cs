@@ -23,4 +23,9 @@ public class FizzBuzzDivisionTests
     [Fact]
     public void WhenImplementationActivatedThenResolvesService() => Service
         .Should().NotBeNull();
+
+    [Theory]
+    [InlineData(1), InlineData(2), InlineData(4), InlineData(7)]
+    public void WhenNotDivisibleByThreeOrFiveThenReturnsNumber(int number) => Service
+        .GetDivision(number).Should().Be(number.ToString());
 }
