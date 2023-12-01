@@ -17,4 +17,10 @@ public class FizzBuzzDivisionTests
     [Fact]
     public void WhenAssemblyScannedThenFindsImplementation() => FizzBuzzImplementationType
         .Should().NotBeNull();
+
+    private IFizzBuzz Service => (IFizzBuzz)Activator.CreateInstance(FizzBuzzImplementationType!)!;
+
+    [Fact]
+    public void WhenImplementationActivatedThenResolvesService() => Service
+        .Should().NotBeNull();
 }
